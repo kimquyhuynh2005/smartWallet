@@ -1,0 +1,30 @@
+{
+  "docTitle": "Về chúng tôi – SmartWallet",
+  "overline": "Về chúng tôi",
+  "title": "Một cuốn sổ chi tiêu bạn muốn mở mỗi ngày",
+  "mission": { "body": "SmartWallet ra đời cho sinh viên và người trẻ mới đi làm hay hụt tiền cuối tháng mà không biết đã tiêu vào đâu. Chúng tôi muốn việc ghi chép chỉ mất vài giây, ngân sách rõ ràng, và bạn được nhắc nhẹ nhàng trước khi chạm giới hạn, không bị trách móc." },
+  "why": {
+    "title": "Vì sao chọn SmartWallet",
+    "items": {
+      "one": { "title": "Ghi nhanh, không phải nghĩ", "body": "Gõ ghi chú, ứng dụng gợi ý danh mục. Thêm một khoản chi chỉ vài chạm ngay sau khi trả tiền." },
+      "two": { "title": "Ngân sách theo kỳ lương của bạn", "body": "Tháng của bạn bắt đầu ngày nào cũng được. Biết còn bao nhiêu và mỗi ngày có thể chi bao nhiêu." },
+      "three": { "title": "Nhắc đúng lúc, nói nhẹ nhàng", "body": "Báo khi gần chạm 80% và khi vượt ngân sách, để bạn điều chỉnh kịp thay vì giật mình cuối tháng." }
+    }
+  },
+  "team": {
+    "title": "Đội ngũ",
+    "hint": "Năm người, mỗi người một mảng, cùng làm ra một ứng dụng gọn gàng.",
+    "roles": { "pm": "Quản lý dự án", "backend": "Lập trình Backend", "frontend": "Lập trình Frontend", "design": "Thiết kế UI/UX", "tester": "Kiểm thử" }
+  },
+  "privacy": {
+    "title": "Cam kết về dữ liệu",
+    "lead": "Tiền bạc là chuyện riêng. Chúng tôi giữ nó đúng như vậy.",
+    "items": {
+      "admins": { "title": "Quản trị viên không xem được giao dịch của bạn.", "body": "Họ chỉ thấy số liệu tổng hợp của hệ thống." },
+      "yours": { "title": "Dữ liệu là của bạn.", "body": "Bạn có thể xuất ra tệp CSV bất cứ lúc nào." },
+      "delete": { "title": "Xóa tài khoản bất cứ lúc nào.", "body": "Dữ liệu của bạn được xóa hẳn sau 30 ngày." },
+      "noSale": { "title": "Không bán dữ liệu.", "body": "Không quảng cáo theo dõi, không chia sẻ cho bên thứ ba." }
+    }
+  },
+  "cta": { "title": "Thử ghi khoản chi đầu tiên", "body": "Tạo tài khoản miễn phí, mất chưa đến hai phút.", "action": "Tạo tài khoản", "login": "Đăng nhập" }
+}

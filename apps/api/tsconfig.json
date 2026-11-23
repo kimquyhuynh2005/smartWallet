@@ -1,0 +1,9 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "module": "CommonJS", "outDir": "dist", "baseUrl": ".",
+    "emitDecoratorMetadata": true, "experimentalDecorators": true,
+    "incremental": false, "types": ["node", "jest", "multer"]
+  },
+  "include": ["src", "test", "scripts", "prisma/seed.ts"]
+}

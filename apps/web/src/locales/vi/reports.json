@@ -1,0 +1,64 @@
+{
+  "title": "Báo cáo",
+  "income": "Thu nhập",
+  "expense": "Chi tiêu",
+  "net": "Chênh lệch",
+  "month": "Tháng",
+  "upgrade": "Nâng cấp",
+  "retry": "Thử lại",
+  "addTransaction": "Thêm giao dịch",
+  "kind": { "label": "Loại giao dịch" },
+  "locked": {
+    "period": "Kỳ này nằm ngoài lịch sử của gói Miễn phí (6 tháng gần nhất). Nâng cấp để xem báo cáo của các kỳ cũ hơn.",
+    "trend": "Xem xu hướng 12 tháng là tính năng của gói Premium. Gói Miễn phí xem được 6 tháng gần nhất."
+  },
+  "byCategory": {
+    "title": "Chi tiêu theo danh mục",
+    "hint": "Danh mục nào chiếm nhiều nhất trong kỳ. Chạm vào một dòng để xem các giao dịch.",
+    "total": { "expense": "Tổng chi trong kỳ", "income": "Tổng thu trong kỳ" },
+    "empty": { "expense": "Kỳ này chưa có khoản chi nào", "income": "Kỳ này chưa có khoản thu nào" },
+    "emptyHint": "Thêm giao dịch đầu tiên để thấy tiền của bạn đi đâu.",
+    "open": "xem giao dịch",
+    "more": "Xem thêm {{count}} danh mục",
+    "less": "Thu gọn"
+  },
+  "notes": {
+    "title": "Khoản hay gặp nhất",
+    "hint": "Các ghi chú xuất hiện nhiều nhất trong kỳ.",
+    "count_other": "{{count}} lần",
+    "empty": "Chưa có ghi chú nào trong kỳ này",
+    "emptyHint": "Thêm ghi chú khi nhập giao dịch để thấy những khoản lặp lại.",
+    "unavailable": "Phần này chưa có trên máy chủ này."
+  },
+  "trend": {
+    "title": "Thu và chi theo tháng",
+    "hint": "Cột là thu và chi, đường là phần chênh lệch mỗi tháng.",
+    "range": "Số tháng",
+    "m6": "6 tháng",
+    "m12": "12 tháng",
+    "table": "Xem bảng số liệu",
+    "empty": "Chưa có dữ liệu thu chi",
+    "emptyHint": "Khi bạn có giao dịch, xu hướng theo tháng sẽ hiện ở đây."
+  },
+  "daily": {
+    "title": "Chi tiêu theo ngày",
+    "hint": "Mỗi cột là tổng chi của một ngày trong kỳ.",
+    "empty": "Kỳ này chưa có khoản chi nào",
+    "emptyHint": "Thêm một khoản chi để xem nhịp chi tiêu từng ngày.",
+    "day": "Ngày",
+    "peak": "Ngày chi nhiều nhất: {{date}}, {{amount}}.",
+    "cumulative": "Đã chi lũy kế",
+    "paceTitle": "Nhịp chi so với ngân sách",
+    "pace": {
+      "line": "Nhịp theo kế hoạch",
+      "on": "Bạn đang chi đúng nhịp kế hoạch.",
+      "fast": "Bạn đang chi nhanh hơn kế hoạch {{percent}}%.",
+      "slow": "Bạn đang chi chậm hơn kế hoạch {{percent}}%, vẫn còn thoải mái."
+    }
+  },
+  "export": {
+    "label": "Xuất CSV",
+    "done": "Đã tải tệp CSV",
+    "failed": "Chưa xuất được tệp CSV"
+  }
+}

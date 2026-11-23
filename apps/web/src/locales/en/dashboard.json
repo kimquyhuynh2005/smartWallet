@@ -1,0 +1,92 @@
+{
+  "greeting": {
+    "morning": "Good morning, {{name}}",
+    "afternoon": "Good afternoon, {{name}}",
+    "evening": "Good evening, {{name}}",
+    "plain": "Overview"
+  },
+  "daysLeft_one": "{{count}} day left",
+  "daysLeft_other": "{{count}} days left",
+  "pastPeriod": "Period has ended",
+  "hero": {
+    "left": "Left this period",
+    "leftPast": "Left at the end of the period",
+    "safeToday": "Today you can spend up to",
+    "safeZero": "You've used up this period's budget. You can adjust it under Budgets."
+  },
+  "summary": {
+    "used_one": "You have used {{percent}} of your budget, {{count}} day left.",
+    "used_other": "You have used {{percent}} of your budget, {{count}} days left.",
+    "usedPast": "You used {{percent}} of your budget this period.",
+    "over": "This period's budget is over by {{amount}}. Shall we adjust it?"
+  },
+  "noBudget": {
+    "title": "No total budget yet",
+    "hint": "Set one budget for the whole month to see how much you can spend each day.",
+    "cta": "Set a budget"
+  },
+  "empty": {
+    "title": "Start with your first expense",
+    "hint": "Log today's coffee or lunch, it takes a few seconds. This page fills in as you add more transactions.",
+    "cta": "Add your first transaction"
+  },
+  "error": {
+    "title": "Couldn't load your overview",
+    "hint": "The connection may be unstable. Your data is safe, please try again."
+  },
+  "income": "Income",
+  "expense": "Spending",
+  "net": "Difference",
+  "month": "Month",
+  "delta": {
+    "up": "Up {{amount}} from the previous period",
+    "down": "Down {{amount}} from the previous period",
+    "same": "Same as the previous period"
+  },
+  "budgets": "Budgets closest to the limit",
+  "trendTitle": "Income and spending, recent periods",
+  "recent": "Recent",
+  "noTransactions": "No transactions in this period yet.",
+  "wallets": "Wallets",
+  "totalBalance": "Total balance",
+  "noWallets": "You have no wallets yet.",
+  "goals": "Goals",
+  "noGoals": "No goals yet. Set a small one to start saving.",
+  "requiredMonthly": "Set aside {{amount}} per month",
+  "upcoming": "Upcoming recurring",
+  "byCategory": "Spending by category",
+  "planLimit": {
+    "title": "This is older than the Free plan can show",
+    "hint": "The Free plan shows the current period and the 5 before it. You can go back to a more recent period any time."
+  },
+  "loading": "Loading overview",
+  "addWallet": "Add a wallet",
+  "addGoal": "Set a goal",
+  "streak": {
+    "title": "Saving streak",
+    "hint": "Your budget split evenly is <n>{{amount}}</n> a day. Spending under that adds a day to your streak.",
+    "restart": "Today is a good day to start a streak.",
+    "first": "Log your first expense and the streak starts from there.",
+    "best_one": "Record: {{count}} day",
+    "best_other": "Record: {{count}} days",
+    "bestNone": "No record yet, your first streak is waiting.",
+    "week": "Last 7 days",
+    "day": {
+      "within": "within the safe amount",
+      "over": "above the safe amount",
+      "none": "no data yet"
+    },
+    "empty": {
+      "title": "A total budget is needed for the streak",
+      "hint": "With a budget for the whole month we can tell how much you can spend each day.",
+      "cta": "Set a budget"
+    },
+    "error": {
+      "text": "The saving streak could not load right now.",
+      "retry": "Try again"
+    },
+    "loading": "Loading saving streak",
+    "inARow_one": "day in a row",
+    "inARow_other": "days in a row"
+  }
+}

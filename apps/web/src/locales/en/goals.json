@@ -1,0 +1,119 @@
+{
+  "title": "Goals",
+  "subtitle": "Pick a number, then add to it bit by bit.",
+  "add": "Add goal",
+  "status": {
+    "ACTIVE": "In progress",
+    "ACHIEVED": "Achieved",
+    "CANCELED": "Canceled"
+  },
+  "filter": {
+    "ACTIVE": "In progress",
+    "ACHIEVED": "Achieved",
+    "CANCELED": "Canceled",
+    "all": "All"
+  },
+  "card": {
+    "saved": "Saved",
+    "target": "Target",
+    "remaining": "To go",
+    "deadline": "By {{date}}",
+    "noDeadline": "No deadline",
+    "required": "Needed each month",
+    "perMonth": "/ month",
+    "requiredNone": "No deadline, so no monthly amount yet.",
+    "percent": "{{percent}}% done",
+    "overdue": "Past the deadline",
+    "open": "Open details for {{name}}",
+    "ringLabel": "Progress of {{name}}"
+  },
+  "empty": {
+    "title": "No goals yet",
+    "hint": "Think of something you want to save for: an emergency fund, a laptop, a year-end trip. We will work out how much to set aside each month.",
+    "action": "Create your first goal",
+    "filtered": "No goals in this group."
+  },
+  "error": {
+    "title": "Could not load goals",
+    "hint": "The connection may be unstable. Please try again."
+  },
+  "form": {
+    "createTitle": "New goal",
+    "editTitle": "Edit goal",
+    "name": "Goal name",
+    "namePlaceholder": "For example: Emergency fund",
+    "target": "Target amount",
+    "deadline": "Deadline",
+    "deadlineHint": "With a deadline we can work out what to save each month.",
+    "clearDeadline": "Remove deadline",
+    "nameRequired": "Please give your goal a name.",
+    "targetRequired": "Enter an amount above 0.",
+    "targetBelowSaved": "The target should not be lower than what you have saved.",
+    "create": "Create goal",
+    "save": "Save changes"
+  },
+  "toast": {
+    "created": "Goal created",
+    "updated": "Changes saved",
+    "deleted": "Goal deleted",
+    "canceled": "Goal canceled",
+    "reopened": "Goal reopened",
+    "contributed": "Added to your goal",
+    "withdrawn": "Withdrawn from your goal"
+  },
+  "contribute": {
+    "title": "Add or withdraw",
+    "titleFor": "Goal: {{name}}",
+    "deposit": "Add money",
+    "withdraw": "Withdraw",
+    "amount": "Amount",
+    "note": "Note",
+    "notePlaceholder": "For example: November salary",
+    "submitDeposit": "Add to goal",
+    "submitWithdraw": "Withdraw from goal",
+    "amountRequired": "Enter an amount above 0.",
+    "tooMuch": "You can withdraw at most what you have saved.",
+    "available": "Saved:",
+    "errTooMuch": "That is more than you have saved in this goal. Lower the amount and try again.",
+    "errClosed": "This goal is canceled, so it cannot take new contributions. Reopen it first.",
+    "note2": "This only records the amount in the goal. It does not change your wallet balance."
+  },
+  "detail": {
+    "back": "Goals",
+    "notFound": "We could not find this goal",
+    "notFoundHint": "It may have been deleted.",
+    "history": "Contribution history",
+    "historyEmpty": "No contributions yet",
+    "historyEmptyHint": "Your first contribution will show up here with its date.",
+    "historyError": "Could not load the history.",
+    "deposit": "Added",
+    "withdrawal": "Withdrawn",
+    "contribute": "Add / withdraw",
+    "edit": "Edit",
+    "delete": "Delete",
+    "cancelGoal": "Cancel goal",
+    "reopen": "Reopen goal",
+    "summary": "Overview",
+    "created": "Created {{date}}",
+    "achievedInfo": "Achieved because what you saved reached the target. If you withdraw some, the status updates by itself.",
+    "canceledInfo": "Canceled: no new contributions. What you saved is kept.",
+    "historyUnavailable": "No contribution history yet",
+    "historyUnavailableHint": "The server doesn't keep individual contributions yet. The saved total above is correct."
+  },
+  "delete": {
+    "title": "Delete goal “{{name}}”?",
+    "body": "The goal and its history will be removed. This cannot be undone. To just pause it, choose Cancel goal instead.",
+    "confirm": "Delete goal"
+  },
+  "cancel": {
+    "title": "Cancel goal “{{name}}”?",
+    "body": "It stops taking new contributions and sending reminders. You can reopen it any time. What you saved is kept.",
+    "confirm": "Cancel goal",
+    "keep": "Keep it"
+  },
+  "celebrate": {
+    "title": "You reached “{{name}}”!",
+    "body": "Every contribution counted. Congratulations on getting all the way there.",
+    "dismiss": "Dismiss message"
+  }
+}

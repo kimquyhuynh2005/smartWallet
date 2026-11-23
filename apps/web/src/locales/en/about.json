@@ -1,0 +1,30 @@
+{
+  "docTitle": "About us – SmartWallet",
+  "overline": "About us",
+  "title": "A spending notebook you will want to open every day",
+  "mission": { "body": "SmartWallet is made for students and young professionals who run short before month end without knowing where the money went. We want logging to take seconds, budgets to be clear, and warnings to arrive gently before you hit a limit, never as a scolding." },
+  "why": {
+    "title": "Why SmartWallet",
+    "items": {
+      "one": { "title": "Quick to log, nothing to think about", "body": "Type a note and the app suggests a category. Adding an expense takes a few taps right after you pay." },
+      "two": { "title": "Budgets that follow your payday", "body": "Your month can start on any day. See what is left and how much you can spend each day." },
+      "three": { "title": "Timely, gentle reminders", "body": "A heads-up near 80% and when you go over, so you can adjust in time instead of being surprised at month end." }
+    }
+  },
+  "team": {
+    "title": "The team",
+    "hint": "Five people, one area each, building one tidy app together.",
+    "roles": { "pm": "Project manager", "backend": "Backend developer", "frontend": "Frontend developer", "design": "UI/UX designer", "tester": "Tester" }
+  },
+  "privacy": {
+    "title": "Our privacy promise",
+    "lead": "Money is personal. We keep it that way.",
+    "items": {
+      "admins": { "title": "Admins cannot see your transactions.", "body": "They only see system-wide totals." },
+      "yours": { "title": "Your data is yours.", "body": "Export it as CSV whenever you like." },
+      "delete": { "title": "Delete your account any time.", "body": "Your data is erased for good after 30 days." },
+      "noSale": { "title": "We never sell data.", "body": "No tracking ads, no sharing with third parties." }
+    }
+  },
+  "cta": { "title": "Try logging your first expense", "body": "Create a free account in under two minutes.", "action": "Create account", "login": "Log in" }
+}

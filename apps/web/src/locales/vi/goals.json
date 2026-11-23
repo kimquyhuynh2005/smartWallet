@@ -1,0 +1,119 @@
+{
+  "title": "Mục tiêu",
+  "subtitle": "Đặt một con số, rồi góp dần từng đợt.",
+  "add": "Thêm mục tiêu",
+  "status": {
+    "ACTIVE": "Đang góp",
+    "ACHIEVED": "Đã đạt",
+    "CANCELED": "Đã hủy"
+  },
+  "filter": {
+    "ACTIVE": "Đang góp",
+    "ACHIEVED": "Đã đạt",
+    "CANCELED": "Đã hủy",
+    "all": "Tất cả"
+  },
+  "card": {
+    "saved": "Đã góp",
+    "target": "Mục tiêu",
+    "remaining": "Còn thiếu",
+    "deadline": "Hạn: {{date}}",
+    "noDeadline": "Không đặt hạn",
+    "required": "Cần góp mỗi tháng",
+    "perMonth": "/ tháng",
+    "requiredNone": "Chưa có hạn nên chưa tính mức góp hằng tháng.",
+    "percent": "{{percent}}% hoàn thành",
+    "overdue": "Đã quá hạn",
+    "open": "Xem chi tiết {{name}}",
+    "ringLabel": "Tiến độ {{name}}"
+  },
+  "empty": {
+    "title": "Chưa có mục tiêu nào",
+    "hint": "Nghĩ tới một thứ bạn muốn dành tiền cho: quỹ khẩn cấp, chiếc laptop, chuyến đi cuối năm. Mình giúp bạn tính mỗi tháng cần góp bao nhiêu.",
+    "action": "Tạo mục tiêu đầu tiên",
+    "filtered": "Không có mục tiêu nào ở nhóm này."
+  },
+  "error": {
+    "title": "Chưa tải được mục tiêu",
+    "hint": "Có thể mạng đang chập chờn. Bạn thử lại nhé."
+  },
+  "form": {
+    "createTitle": "Mục tiêu mới",
+    "editTitle": "Sửa mục tiêu",
+    "name": "Tên mục tiêu",
+    "namePlaceholder": "Ví dụ: Quỹ khẩn cấp",
+    "target": "Số tiền cần đạt",
+    "deadline": "Hạn hoàn thành",
+    "deadlineHint": "Có hạn thì mình tính được mỗi tháng cần góp bao nhiêu.",
+    "clearDeadline": "Bỏ hạn",
+    "nameRequired": "Bạn đặt tên cho mục tiêu nhé.",
+    "targetRequired": "Nhập số tiền lớn hơn 0.",
+    "targetBelowSaved": "Số tiền cần đạt không nên thấp hơn số đã góp.",
+    "create": "Tạo mục tiêu",
+    "save": "Lưu thay đổi"
+  },
+  "toast": {
+    "created": "Đã tạo mục tiêu",
+    "updated": "Đã lưu thay đổi",
+    "deleted": "Đã xóa mục tiêu",
+    "canceled": "Đã hủy mục tiêu",
+    "reopened": "Đã mở lại mục tiêu",
+    "contributed": "Đã góp vào mục tiêu",
+    "withdrawn": "Đã rút khỏi mục tiêu"
+  },
+  "contribute": {
+    "title": "Góp / rút tiền",
+    "titleFor": "Mục tiêu: {{name}}",
+    "deposit": "Góp thêm",
+    "withdraw": "Rút ra",
+    "amount": "Số tiền",
+    "note": "Ghi chú",
+    "notePlaceholder": "Ví dụ: Lương tháng 11",
+    "submitDeposit": "Góp vào mục tiêu",
+    "submitWithdraw": "Rút khỏi mục tiêu",
+    "amountRequired": "Nhập số tiền lớn hơn 0.",
+    "tooMuch": "Bạn chỉ rút được tối đa số đã góp.",
+    "available": "Đã góp:",
+    "errTooMuch": "Số tiền rút lớn hơn số bạn đã góp trong mục tiêu này. Bạn giảm số tiền rồi thử lại nhé.",
+    "errClosed": "Mục tiêu này đã hủy nên chưa nhận thêm khoản góp được. Hãy mở lại mục tiêu trước nhé.",
+    "note2": "Khoản này chỉ ghi vào mục tiêu, không thay đổi số dư ví."
+  },
+  "detail": {
+    "back": "Mục tiêu",
+    "notFound": "Không tìm thấy mục tiêu này",
+    "notFoundHint": "Có thể mục tiêu đã bị xóa.",
+    "history": "Lịch sử góp",
+    "historyEmpty": "Chưa có khoản góp nào",
+    "historyEmptyHint": "Khoản góp đầu tiên sẽ hiện ở đây, kèm ngày giờ.",
+    "historyError": "Chưa tải được lịch sử.",
+    "deposit": "Góp",
+    "withdrawal": "Rút",
+    "contribute": "Góp / rút",
+    "edit": "Sửa",
+    "delete": "Xóa",
+    "cancelGoal": "Hủy mục tiêu",
+    "reopen": "Mở lại mục tiêu",
+    "summary": "Tổng quan",
+    "created": "Tạo ngày {{date}}",
+    "achievedInfo": "Mục tiêu đã đạt vì số đã góp chạm số cần đạt. Nếu rút bớt, trạng thái sẽ tự cập nhật.",
+    "canceledInfo": "Mục tiêu đã hủy: không nhận khoản góp mới. Số đã góp vẫn được giữ lại.",
+    "historyUnavailable": "Chưa có lịch sử góp",
+    "historyUnavailableHint": "Máy chủ hiện chưa lưu từng lần góp. Số đã góp ở trên vẫn đúng."
+  },
+  "delete": {
+    "title": "Xóa mục tiêu “{{name}}”?",
+    "body": "Mục tiêu và lịch sử góp sẽ bị xóa. Việc này không hoàn tác được. Nếu chỉ muốn tạm dừng, hãy chọn Hủy mục tiêu.",
+    "confirm": "Xóa mục tiêu"
+  },
+  "cancel": {
+    "title": "Hủy mục tiêu “{{name}}”?",
+    "body": "Mục tiêu sẽ ngừng nhận khoản góp mới và không còn nhắc nhở. Bạn mở lại được bất cứ lúc nào. Số đã góp vẫn được giữ.",
+    "confirm": "Hủy mục tiêu",
+    "keep": "Giữ lại"
+  },
+  "celebrate": {
+    "title": "Bạn đã đạt mục tiêu “{{name}}”!",
+    "body": "Mỗi lần góp đều có ích. Chúc mừng bạn đã đi hết chặng đường này.",
+    "dismiss": "Đóng lời chúc"
+  }
+}

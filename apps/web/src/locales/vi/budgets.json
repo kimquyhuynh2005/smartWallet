@@ -1,0 +1,197 @@
+{
+  "title": "Ngân sách",
+  "periodRange": "Kỳ {{range}}",
+  "pastPeriod": "Kỳ đã kết thúc: bạn xem lại được, hạn mức vẫn chỉnh được.",
+  "actions": {
+    "template": "Dùng mẫu",
+    "add": "Thêm ngân sách",
+    "rollover": "Chuyển phần còn lại sang kỳ này",
+    "delete": "Xóa ngân sách",
+    "edit": "Sửa ngân sách",
+    "save": "Lưu thay đổi",
+    "cancel": "Hủy sửa",
+    "back": "Ngân sách",
+    "seeAll": "Xem tất cả giao dịch"
+  },
+  "total": {
+    "title": "Tổng ngân sách",
+    "spent": "Đã chi",
+    "limit": "Ngân sách",
+    "remaining": "Còn lại",
+    "over": "Vượt",
+    "safe": "Hôm nay chi tối đa",
+    "perDay": "mỗi ngày · còn {{days}} ngày",
+    "ended": "Kỳ này đã kết thúc",
+    "none": "Chưa đặt tổng ngân sách",
+    "noneHint": "Đặt một con số cho cả kỳ để biết hôm nay còn chi được bao nhiêu.",
+    "set": "Đặt tổng ngân sách"
+  },
+  "sort": {
+    "label": "Sắp xếp",
+    "risk": "Gần hết trước",
+    "category": "Theo danh mục"
+  },
+  "row": {
+    "spent": "Đã chi",
+    "limit": "Ngân sách",
+    "left": "Còn lại",
+    "over": "Vượt",
+    "safe": "Hôm nay chi tối đa",
+    "carried": "đã chuyển sang:",
+    "carry": "Chuyển phần còn lại sang kỳ sau",
+    "carryHint": "Khi bật, tiền chưa chi của kỳ này sẽ cộng vào kỳ sau",
+    "editLimit": "Sửa hạn mức {{name}}",
+    "details": "{{name}}, xem giao dịch",
+    "more": "Tùy chọn cho {{name}}",
+    "limitInvalid": "Hạn mức phải lớn hơn 0."
+  },
+  "state": {
+    "calm": "Đang ổn",
+    "warning": "Gần hết",
+    "over": "Vượt ngân sách"
+  },
+  "list": {
+    "title": "Theo danh mục",
+    "empty": "Chưa có ngân sách theo danh mục",
+    "emptyHint": "Đặt hạn mức cho Ăn uống, Di chuyển... để được nhắc khi sắp chạm trần.",
+    "emptyAction": "Chọn mẫu 50/30/20"
+  },
+  "empty": {
+    "title": "Kỳ này chưa có ngân sách",
+    "hint": "Bắt đầu nhanh bằng một mẫu có sẵn, hoặc tự đặt hạn mức cho từng danh mục. Bạn luôn sửa lại được.",
+    "pastTitle": "Kỳ này không có ngân sách",
+    "pastHint": "Kỳ này đã kết thúc và chưa có ngân sách nào được đặt. Bạn chọn kỳ gần đây hơn ở thanh chọn tháng nhé."
+  },
+  "error": {
+    "title": "Chưa tải được ngân sách",
+    "hint": "Có thể mạng đang chập chờn. Bạn thử lại nhé."
+  },
+  "toast": {
+    "limitSaved": "Đã cập nhật hạn mức",
+    "added": "Đã thêm ngân sách",
+    "deleted": "Đã xóa ngân sách",
+    "carrySaved": "Đã lưu tùy chọn chuyển phần còn lại"
+  },
+  "add": {
+    "title": "Thêm ngân sách",
+    "desc": "Mỗi danh mục có một hạn mức cho mỗi kỳ. Hạn mức danh mục cũng tính cả danh mục con.",
+    "category": "Danh mục",
+    "pick": "Chọn danh mục",
+    "limit": "Hạn mức cho kỳ này",
+    "submit": "Thêm",
+    "total": "Tổng ngân sách (cả kỳ)",
+    "allUsed": "Bạn đã đặt ngân sách cho mọi danh mục chi tiêu.",
+    "required": "Bạn chọn một danh mục nhé.",
+    "amountRequired": "Nhập số tiền lớn hơn 0."
+  },
+  "delete": {
+    "title": "Xóa ngân sách này?",
+    "body": "Mình chỉ xóa hạn mức của kỳ này. Các giao dịch của bạn vẫn giữ nguyên.",
+    "confirm": "Xóa",
+    "name": "Ngân sách: {{name}}"
+  },
+  "template": {
+    "title": "Chọn mẫu ngân sách",
+    "desc": "Nhập thu nhập tháng, mình chia sẵn hạn mức cho từng danh mục. Bạn xem trước rồi mới áp dụng.",
+    "steps": {
+      "setup": "Thiết lập",
+      "preview": "Xem trước"
+    },
+    "kind": {
+      "50_30_20": "50/30/20",
+      "6_JARS": "6 hũ",
+      "CUSTOM": "Tự chia"
+    },
+    "kindHint": {
+      "50_30_20": "50% nhu cầu thiết yếu, 30% mong muốn, 20% tiết kiệm. Hợp với người mới bắt đầu.",
+      "6_JARS": "55% thiết yếu, 10% học tập, 10% tiết kiệm dài hạn, 10% hưởng thụ, 10% tự do tài chính, 5% cho đi.",
+      "CUSTOM": "Bạn tự đặt tỷ lệ cho từng nhóm. Tổng phải đúng 100%."
+    },
+    "income": "Thu nhập hàng tháng",
+    "incomeHint": "Con số này chỉ dùng để chia tỷ lệ, không tạo giao dịch.",
+    "incomeRequired": "Nhập thu nhập lớn hơn 0.",
+    "groups": {
+      "needs": "Thiết yếu",
+      "wants": "Mong muốn",
+      "savings": "Tiết kiệm",
+      "necessities": "Thiết yếu",
+      "education": "Học tập",
+      "long_term_savings": "Tiết kiệm dài hạn",
+      "play": "Vui chơi",
+      "financial_freedom": "Tự do tài chính",
+      "give": "Cho đi"
+    },
+    "custom": {
+      "groupName": "Tên nhóm",
+      "percent": "Tỷ lệ (%)",
+      "categories": "Danh mục trong nhóm",
+      "noCategories": "Nhóm không có danh mục được tính là tiết kiệm: mình để dành, không đặt ngân sách.",
+      "addGroup": "Thêm nhóm",
+      "removeGroup": "Xóa nhóm {{name}}",
+      "total": "Tổng tỷ lệ: {{total}}%",
+      "ok": "Đủ 100%",
+      "short": "Còn thiếu {{n}}%",
+      "extra": "Đang dư {{n}}%",
+      "newName": "Nhóm {{n}}"
+    },
+    "preview": {
+      "title": "Bạn sẽ có",
+      "total": "Tổng ngân sách",
+      "reserved": "Để dành tiết kiệm",
+      "group": "{{name}} · {{percent}}%",
+      "approx": "Số tiền từng danh mục là ước tính chia đều. Khi áp dụng, mình chia theo chi tiêu 3 kỳ gần nhất của bạn nên có thể lệch chút.",
+      "empty": "Mẫu này chưa có danh mục nào để đặt ngân sách.",
+      "planCut": "Gói Miễn phí tối đa {{max}} ngân sách (tính cả tổng). Nếu vượt, mình giữ tổng và các danh mục lớn nhất.",
+      "savings": "Tiết kiệm",
+      "reservedHint": "Không tạo ngân sách cho phần này"
+    },
+    "overwrite": {
+      "legend": "Nếu danh mục đã có ngân sách",
+      "keep": "Giữ nguyên cái đã có",
+      "keepHint": "Chỉ thêm ngân sách cho danh mục chưa có. Hạn mức bạn đã đặt không bị đổi. (Khuyến nghị)",
+      "replace": "Đặt lại theo mẫu",
+      "replaceHint": "Hạn mức đã có của các danh mục trong mẫu sẽ bị thay bằng số mới."
+    },
+    "next": "Xem trước",
+    "back": "Sửa lại",
+    "apply": "Áp dụng cho kỳ này",
+    "done": {
+      "title": "Đã áp dụng mẫu",
+      "created": "Tạo mới: {{n}}",
+      "updated": "Cập nhật: {{n}}",
+      "skipped": "Giữ nguyên: {{n}}",
+      "cut": "Bỏ qua do giới hạn gói: {{n}}",
+      "close": "Xong"
+    }
+  },
+  "rollover": {
+    "title": "Chuyển phần còn lại sang kỳ này",
+    "intro": "Mình lấy số tiền chưa chi của kỳ trước, cộng vào hạn mức kỳ này cho những ngân sách đã bật chuyển phần còn lại.",
+    "rule1": "Chi vượt thì chuyển 0: mình không trừ vào kỳ sau.",
+    "rule2": "Tiền đã chuyển không bị chuyển lần nữa, bấm lại cũng an toàn.",
+    "rule3": "Hạn mức gốc bạn đã tự sửa vẫn được giữ.",
+    "run": "Chuyển ngay",
+    "done": "Đã chuyển xong",
+    "carried": "Tổng tiền chuyển sang",
+    "created": "Tạo mới: {{n}}",
+    "updated": "Cập nhật: {{n}}",
+    "skipped": "Bỏ qua: {{n}}",
+    "planCut": "Bỏ qua do giới hạn gói: {{n}}",
+    "noneCarried": "Chưa có khoản nào được chuyển. Hãy bật công tắc “Chuyển phần còn lại sang kỳ sau” ở ngân sách của kỳ trước.",
+    "close": "Đóng"
+  },
+  "detail": {
+    "title": "Chi tiêu theo danh mục",
+    "unknown": "Danh mục này",
+    "noBudget": "Danh mục này chưa có ngân sách trong kỳ.",
+    "setBudget": "Đặt ngân sách",
+    "txns": "Giao dịch trong kỳ",
+    "covers": "Gồm cả: {{names}}",
+    "empty": "Chưa có khoản chi nào trong kỳ này",
+    "emptyHint": "Khi bạn ghi chi tiêu thuộc danh mục này, nó sẽ hiện ở đây.",
+    "more": "Xem thêm",
+    "errorTxn": "Chưa tải được giao dịch.",
+    "notFound": "Không tìm thấy danh mục này.",
+    "backToBudgets": "Về ngân sách"
+  }
+}

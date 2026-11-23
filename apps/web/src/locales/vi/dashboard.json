@@ -1,0 +1,88 @@
+{
+  "greeting": {
+    "morning": "Chào buổi sáng, {{name}}",
+    "afternoon": "Chào buổi chiều, {{name}}",
+    "evening": "Chào buổi tối, {{name}}",
+    "plain": "Tổng quan"
+  },
+  "daysLeft_other": "Còn {{count}} ngày",
+  "pastPeriod": "Kỳ đã kết thúc",
+  "hero": {
+    "left": "Còn lại trong kỳ này",
+    "leftPast": "Còn lại cuối kỳ",
+    "safeToday": "Hôm nay bạn có thể chi tối đa",
+    "safeZero": "Ngân sách kỳ này đã dùng hết. Bạn điều chỉnh trong mục Ngân sách nhé."
+  },
+  "summary": {
+    "used_other": "Bạn đã dùng {{percent}} ngân sách, còn {{count}} ngày.",
+    "usedPast": "Kỳ này bạn đã dùng {{percent}} ngân sách.",
+    "over": "Ngân sách kỳ này đã vượt {{amount}}. Mình điều chỉnh lại nhé?"
+  },
+  "noBudget": {
+    "title": "Chưa có ngân sách tổng",
+    "hint": "Đặt một ngân sách cho cả tháng để biết mỗi ngày nên chi bao nhiêu.",
+    "cta": "Đặt ngân sách"
+  },
+  "empty": {
+    "title": "Bắt đầu bằng khoản chi đầu tiên",
+    "hint": "Ghi lại ly cà phê hay bữa trưa hôm nay, chỉ mất vài giây. Tổng quan sẽ tự đầy lên khi bạn có thêm giao dịch.",
+    "cta": "Thêm giao dịch đầu tiên"
+  },
+  "error": {
+    "title": "Chưa tải được tổng quan",
+    "hint": "Có thể mạng đang chập chờn. Dữ liệu của bạn vẫn an toàn, bạn thử lại nhé."
+  },
+  "income": "Thu nhập",
+  "expense": "Chi tiêu",
+  "net": "Chênh lệch",
+  "month": "Tháng",
+  "delta": {
+    "up": "Tăng {{amount}} so với kỳ trước",
+    "down": "Giảm {{amount}} so với kỳ trước",
+    "same": "Bằng kỳ trước"
+  },
+  "budgets": "Ngân sách sắp hết",
+  "trendTitle": "Thu và chi các kỳ gần đây",
+  "recent": "Gần đây",
+  "noTransactions": "Chưa có giao dịch nào trong kỳ này.",
+  "wallets": "Ví",
+  "totalBalance": "Tổng số dư",
+  "noWallets": "Bạn chưa có ví nào.",
+  "goals": "Mục tiêu",
+  "noGoals": "Chưa có mục tiêu nào. Đặt một mục tiêu nhỏ để bắt đầu tiết kiệm.",
+  "requiredMonthly": "Cần góp {{amount}} mỗi tháng",
+  "upcoming": "Khoản định kỳ sắp tới",
+  "byCategory": "Chi tiêu theo danh mục",
+  "planLimit": {
+    "title": "Bản ghi cũ hơn gói Miễn phí xem được",
+    "hint": "Gói Miễn phí xem được kỳ hiện tại và 5 kỳ trước. Bạn có thể quay lại kỳ gần hơn bất cứ lúc nào."
+  },
+  "loading": "Đang tải tổng quan",
+  "addWallet": "Thêm ví",
+  "addGoal": "Đặt mục tiêu",
+  "streak": {
+    "title": "Chuỗi tiết kiệm",
+    "hint": "Ngân sách chia đều theo ngày là <n>{{amount}}</n> mỗi ngày. Chi dưới mức đó là thêm một ngày vào chuỗi.",
+    "restart": "Hôm nay là ngày mới để bắt đầu một chuỗi.",
+    "first": "Ghi khoản chi đầu tiên, chuỗi sẽ bắt đầu từ đó.",
+    "best_other": "Kỷ lục: {{count}} ngày",
+    "bestNone": "Chưa có kỷ lục nào, chuỗi đầu tiên đang chờ bạn.",
+    "week": "7 ngày gần nhất",
+    "day": {
+      "within": "trong mức an toàn",
+      "over": "chi nhiều hơn mức an toàn",
+      "none": "chưa có dữ liệu"
+    },
+    "empty": {
+      "title": "Cần một ngân sách tổng để tính chuỗi",
+      "hint": "Có ngân sách cho cả tháng, mình mới biết mỗi ngày bạn nên chi tối đa bao nhiêu.",
+      "cta": "Đặt ngân sách"
+    },
+    "error": {
+      "text": "Chưa tải được chuỗi tiết kiệm lúc này.",
+      "retry": "Thử lại"
+    },
+    "loading": "Đang tải chuỗi tiết kiệm",
+    "inARow_other": "ngày liên tiếp"
+  }
+}

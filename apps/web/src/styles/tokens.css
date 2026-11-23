@@ -1,0 +1,86 @@
+/* SmartWallet design tokens. Colors are space-separated RGB so Tailwind can add opacity: bg-accent/10.
+   Guide: docs/frontend-guide.md. Light = paper, dark = warm night (same personality). */
+
+/* Digits-only face: Inter has real tabular figures, so columns of money line up like a ledger. */
+@font-face { font-family: 'SW Digits'; font-weight: 400; font-display: swap; src: url('@fontsource/inter/files/inter-latin-400-normal.woff2') format('woff2'); unicode-range: U+0030-0039; }
+@font-face { font-family: 'SW Digits'; font-weight: 500; font-display: swap; src: url('@fontsource/inter/files/inter-latin-500-normal.woff2') format('woff2'); unicode-range: U+0030-0039; }
+@font-face { font-family: 'SW Digits'; font-weight: 600; font-display: swap; src: url('@fontsource/inter/files/inter-latin-600-normal.woff2') format('woff2'); unicode-range: U+0030-0039; }
+@font-face { font-family: 'SW Digits'; font-weight: 700; font-display: swap; src: url('@fontsource/inter/files/inter-latin-700-normal.woff2') format('woff2'); unicode-range: U+0030-0039; }
+
+:root {
+  color-scheme: light;
+  --paper: 251 248 243;
+  --surface: 255 254 251;
+  --sunken: 244 239 230;
+  --ink: 31 42 38;
+  --ink-2: 86 96 90;
+  --ink-3: 95 104 98;
+  --line: 230 223 210;
+  --line-strong: 213 204 187;
+  --control: 140 132 118; /* form-control borders: >= 3:1 on paper, surface and sunken (WCAG 1.4.11) */
+  --scrim: 31 42 38 / 0.4;
+  --accent: 31 107 84;
+  --accent-ink: 255 255 255;
+  --accent-soft: 227 240 234;
+  --warn: 154 69 6;
+  --warn-soft: 251 235 208;
+  --danger: 163 58 50;
+  --danger-soft: 248 227 224;
+
+  /* category hues (muted) */
+  --cat-food: 168 80 44;
+  --cat-transport: 66 96 148;
+  --cat-housing: 140 116 66;
+  --cat-bills: 138 106 14;
+  --cat-shopping: 160 64 94;
+  --cat-entertainment: 47 138 133;
+  --cat-education: 86 102 166;
+  --cat-health: 188 74 67;
+  --cat-gifts: 168 92 64;
+  --cat-other: 115 122 116;
+  --cat-salary: 36 108 76;
+  --cat-allowance: 52 120 68;
+  --cat-parttime: 51 134 139;
+  --cat-bonus: 96 120 28;
+
+  --shadow-float: 0 12px 32px -16px rgb(31 42 38 / 0.28), 0 2px 6px -2px rgb(31 42 38 / 0.08);
+  --font-ui: 'Be Vietnam Pro', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+.dark {
+  color-scheme: dark;
+  --paper: 22 19 15;
+  --surface: 30 26 21;
+  --sunken: 18 15 11;
+  --ink: 241 235 221;
+  --ink-2: 185 178 164;
+  --ink-3: 163 156 144;
+  --line: 46 41 34;
+  --line-strong: 64 58 49;
+  --control: 118 111 98;
+  --scrim: 8 6 4 / 0.62;
+  --accent: 92 194 160;
+  --accent-ink: 13 31 24;
+  --accent-soft: 27 46 39;
+  --warn: 240 178 90;
+  --warn-soft: 58 44 20;
+  --danger: 240 138 128;
+  --danger-soft: 59 31 28;
+
+  --cat-food: 224 143 108;
+  --cat-transport: 138 168 220;
+  --cat-housing: 201 174 114;
+  --cat-bills: 221 184 79;
+  --cat-shopping: 229 139 168;
+  --cat-entertainment: 108 195 189;
+  --cat-education: 148 163 224;
+  --cat-health: 234 138 130;
+  --cat-gifts: 231 165 140;
+  --cat-other: 169 175 168;
+  --cat-salary: 99 196 155;
+  --cat-allowance: 134 204 149;
+  --cat-parttime: 111 194 199;
+  --cat-bonus: 181 208 106;
+
+  --shadow-float: 0 16px 40px -16px rgb(0 0 0 / 0.65), 0 2px 6px -2px rgb(0 0 0 / 0.4);
+}

@@ -1,0 +1,375 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "debian-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Conventions: UUID PK, created_at/updated_at everywhere, deleted_at on user-owned tables (all but plans).
+// Money = BIGINT VND. CHECK constraints and partial indexes live in the migration SQL (Prisma cannot express them):
+//   transactions.amount > 0, goals/budgets amounts, users.month_start_day 1..28,
+//   unique total budget per (user, period), partial index notifications(user_id, read_at) WHERE read_at IS NULL.
+
+enum UserRole {
+  USER
+  ADMIN
+}
+
+enum UserStatus {
+  ACTIVE
+  LOCKED
+}
+
+enum AuthProviderType {
+  GOOGLE
+}
+
+enum PlanCode {
+  FREE
+  PREMIUM
+}
+
+enum SubscriptionStatus {
+  ACTIVE
+  CANCELED
+  EXPIRED
+}
+
+enum WalletType {
+  CASH
+  BANK
+  EWALLET
+  CREDIT
+}
+
+enum CategoryType {
+  INCOME
+  EXPENSE
+}
+
+enum TransactionType {
+  INCOME
+  EXPENSE
+  TRANSFER
+}
+
+enum TransactionSource {
+  MANUAL
+  IMPORT
+  RECURRING
+}
+
+enum Frequency {
+  DAILY
+  WEEKLY
+  MONTHLY
+}
+
+enum RolloverMode {
+  NONE
+  CARRY_FORWARD
+}
+
+enum GoalStatus {
+  ACTIVE
+  ACHIEVED
+  CANCELED
+}
+
+enum NotificationType {
+  BUDGET_WARNING
+  BUDGET_EXCEEDED
+  GOAL
+  SYSTEM
+}
+
+model User {
+  id              String     @id @default(uuid()) @db.Uuid
+  email           String     @unique
+  passwordHash    String?    @map("password_hash") // null for Google-only accounts
+  fullName        String     @map("full_name")
+  avatarUrl       String?    @map("avatar_url")
+  role            UserRole   @default(USER)
+  status          UserStatus @default(ACTIVE)
+  locale          String     @default("vi")
+  currency        String     @default("VND")
+  monthStartDay   Int        @default(1) @map("month_start_day")
+  emailVerifiedAt DateTime?  @map("email_verified_at")
+  // { inApp, email, weeklySummary, goalReminders }: channel mutes (ALR-02). Added beyond the 14-table spec.
+  notificationSettings Json  @default("{\"inApp\": true, \"email\": true, \"weeklySummary\": true, \"goalReminders\": true}") @map("notification_settings")
+  createdAt       DateTime   @default(now()) @map("created_at")
+  updatedAt       DateTime   @updatedAt @map("updated_at")
+  deletedAt       DateTime?  @map("deleted_at") // account deletion: purged after 30 days
+
+  authProviders    AuthProvider[]
+  refreshTokens    RefreshToken[]
+  subscriptions    Subscription[]
+  wallets          Wallet[]
+  categories       Category[]
+  transactions     Transaction[]
+  recurringRules   RecurringRule[]
+  categoryRules    CategoryRule[]
+  budgets          Budget[]
+  goals            Goal[]
+  notifications    Notification[]
+
+  @@map("users")
+}
+
+model AuthProvider {
+  id             String           @id @default(uuid()) @db.Uuid
+  userId         String           @map("user_id") @db.Uuid
+  provider       AuthProviderType
+  providerUserId String           @map("provider_user_id")
+  createdAt      DateTime         @default(now()) @map("created_at")
+  updatedAt      DateTime         @updatedAt @map("updated_at")
+  deletedAt      DateTime?        @map("deleted_at")
+  user           User             @relation(fields: [userId], references: [id])
+
+  @@unique([provider, providerUserId])
+  @@index([userId])
+  @@map("auth_providers")
+}
+
+model RefreshToken {
+  id        String    @id @default(uuid()) @db.Uuid
+  userId    String    @map("user_id") @db.Uuid
+  tokenHash String    @unique @map("token_hash") // sha256 of the opaque token; never store the raw token
+  expiresAt DateTime  @map("expires_at")
+  revokedAt DateTime? @map("revoked_at")
+  userAgent String?   @map("user_agent")
+  createdAt DateTime  @default(now()) @map("created_at")
+  updatedAt DateTime  @updatedAt @map("updated_at")
+  deletedAt DateTime? @map("deleted_at")
+  user      User      @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@map("refresh_tokens")
+}
+
+model Plan {
+  id            String         @id @default(uuid()) @db.Uuid
+  code          PlanCode       @unique
+  name          String
+  priceVnd      BigInt         @default(0) @map("price_vnd")
+  limits        Json // { max_wallets, max_budgets, max_goals, history_months } ; null = unlimited
+  createdAt     DateTime       @default(now()) @map("created_at")
+  updatedAt     DateTime       @updatedAt @map("updated_at")
+  subscriptions Subscription[]
+
+  @@map("plans")
+}
+
+model Subscription {
+  id                 String             @id @default(uuid()) @db.Uuid
+  userId             String             @map("user_id") @db.Uuid
+  planId             String             @map("plan_id") @db.Uuid
+  status             SubscriptionStatus @default(ACTIVE)
+  currentPeriodStart DateTime           @map("current_period_start")
+  currentPeriodEnd   DateTime?          @map("current_period_end") // null = no end (Free)
+  paymentRef         String?            @map("payment_ref")
+  createdAt          DateTime           @default(now()) @map("created_at")
+  updatedAt          DateTime           @updatedAt @map("updated_at")
+  deletedAt          DateTime?          @map("deleted_at")
+  user               User               @relation(fields: [userId], references: [id])
+  plan               Plan               @relation(fields: [planId], references: [id])
+
+  @@index([userId, status])
+  @@map("subscriptions")
+}
+
+model Wallet {
+  id             String     @id @default(uuid()) @db.Uuid
+  userId         String     @map("user_id") @db.Uuid
+  name           String
+  type           WalletType
+  openingBalance BigInt     @default(0) @map("opening_balance")
+  currency       String     @default("VND")
+  color          String?
+  isArchived     Boolean    @default(false) @map("is_archived")
+  createdAt      DateTime   @default(now()) @map("created_at")
+  updatedAt      DateTime   @updatedAt @map("updated_at")
+  deletedAt      DateTime?  @map("deleted_at")
+  user           User       @relation(fields: [userId], references: [id])
+
+  transactions         Transaction[]    @relation("TxnWallet")
+  incomingTransfers    Transaction[]    @relation("TxnTransferWallet")
+  recurringRules       RecurringRule[]
+  goals                Goal[]
+
+  @@index([userId])
+  @@map("wallets")
+}
+
+model Category {
+  id        String       @id @default(uuid()) @db.Uuid
+  userId    String?      @map("user_id") @db.Uuid // NULL = system default
+  parentId  String?      @map("parent_id") @db.Uuid // max 2 levels (enforced in service)
+  nameVi    String       @map("name_vi")
+  nameEn    String       @map("name_en")
+  type      CategoryType
+  icon      String?
+  color     String?
+  createdAt DateTime     @default(now()) @map("created_at")
+  updatedAt DateTime     @updatedAt @map("updated_at")
+  deletedAt DateTime?    @map("deleted_at")
+  user      User?        @relation(fields: [userId], references: [id])
+  parent    Category?    @relation("CategoryTree", fields: [parentId], references: [id])
+  children  Category[]   @relation("CategoryTree")
+
+  transactions   Transaction[]
+  recurringRules RecurringRule[]
+  rules          CategoryRule[]
+  budgets        Budget[]
+
+  @@index([userId])
+  @@map("categories")
+}
+
+model Transaction {
+  id               String            @id @default(uuid()) @db.Uuid
+  userId           String            @map("user_id") @db.Uuid
+  walletId         String            @map("wallet_id") @db.Uuid // source wallet for transfers
+  categoryId       String?           @map("category_id") @db.Uuid
+  type             TransactionType
+  amount           BigInt // always > 0 (CHECK). Transfers are ONE row: wallet_id -> transfer_wallet_id
+  occurredAt       DateTime          @map("occurred_at")
+  note             String?
+  receiptUrl       String?           @map("receipt_url")
+  transferWalletId String?           @map("transfer_wallet_id") @db.Uuid
+  recurringRuleId  String?           @map("recurring_rule_id") @db.Uuid
+  source           TransactionSource @default(MANUAL)
+  createdAt        DateTime          @default(now()) @map("created_at")
+  updatedAt        DateTime          @updatedAt @map("updated_at")
+  deletedAt        DateTime?         @map("deleted_at")
+
+  user           User           @relation(fields: [userId], references: [id])
+  wallet         Wallet         @relation("TxnWallet", fields: [walletId], references: [id])
+  transferWallet Wallet?        @relation("TxnTransferWallet", fields: [transferWalletId], references: [id])
+  category       Category?      @relation(fields: [categoryId], references: [id])
+  recurringRule  RecurringRule? @relation(fields: [recurringRuleId], references: [id])
+
+  @@index([userId, occurredAt(sort: Desc)])
+  @@index([userId, categoryId, occurredAt])
+  @@index([walletId])
+  @@index([transferWalletId])
+  @@map("transactions")
+}
+
+model RecurringRule {
+  id         String          @id @default(uuid()) @db.Uuid
+  userId     String          @map("user_id") @db.Uuid
+  walletId   String          @map("wallet_id") @db.Uuid
+  categoryId String?         @map("category_id") @db.Uuid
+  type       CategoryType // income or expense (added: a rule must know what it generates)
+  amount     BigInt
+  note       String?
+  frequency  Frequency
+  interval   Int             @default(1)
+  nextRunAt  DateTime        @map("next_run_at")
+  endAt      DateTime?       @map("end_at")
+  createdAt  DateTime        @default(now()) @map("created_at")
+  updatedAt  DateTime        @updatedAt @map("updated_at")
+  deletedAt  DateTime?       @map("deleted_at")
+  user       User            @relation(fields: [userId], references: [id])
+  wallet     Wallet          @relation(fields: [walletId], references: [id])
+  category   Category?       @relation(fields: [categoryId], references: [id])
+  transactions Transaction[]
+
+  @@index([userId])
+  @@index([nextRunAt])
+  @@map("recurring_rules")
+}
+
+model CategoryRule {
+  id         String    @id @default(uuid()) @db.Uuid
+  userId     String?   @map("user_id") @db.Uuid // NULL = global
+  keyword    String // stored lower-case, diacritics stripped
+  categoryId String    @map("category_id") @db.Uuid
+  weight     Int       @default(1)
+  hits       Int       @default(0)
+  createdAt  DateTime  @default(now()) @map("created_at")
+  updatedAt  DateTime  @updatedAt @map("updated_at")
+  deletedAt  DateTime? @map("deleted_at")
+  user       User?     @relation(fields: [userId], references: [id])
+  category   Category  @relation(fields: [categoryId], references: [id])
+
+  @@index([userId, keyword])
+  @@map("category_rules")
+}
+
+model Budget {
+  id              String       @id @default(uuid()) @db.Uuid
+  userId          String       @map("user_id") @db.Uuid
+  period          DateTime     @db.Date // first day of the period
+  categoryId      String?      @map("category_id") @db.Uuid // NULL = total budget
+  limitAmount     BigInt       @map("limit_amount")
+  rolloverMode    RolloverMode @default(NONE) @map("rollover_mode")
+  alertThresholds Int[]        @default([80, 100]) @map("alert_thresholds")
+  // part of limit_amount that was carried over from the previous period (BUD-03). base limit = limit_amount - rollover_amount.
+  rolloverAmount  BigInt       @default(0) @map("rollover_amount")
+  createdAt       DateTime     @default(now()) @map("created_at")
+  updatedAt       DateTime     @updatedAt @map("updated_at")
+  deletedAt       DateTime?    @map("deleted_at")
+  user            User         @relation(fields: [userId], references: [id])
+  category        Category?    @relation(fields: [categoryId], references: [id])
+
+  @@unique([userId, period, categoryId])
+  @@index([userId, period])
+  @@map("budgets")
+}
+
+model Goal {
+  id           String     @id @default(uuid()) @db.Uuid
+  userId       String     @map("user_id") @db.Uuid
+  name         String
+  targetAmount BigInt     @map("target_amount")
+  savedAmount  BigInt     @default(0) @map("saved_amount") // maintained with goal_contributions in one DB transaction
+  deadline     DateTime?  @db.Date
+  walletId     String?    @map("wallet_id") @db.Uuid
+  status       GoalStatus @default(ACTIVE)
+  createdAt    DateTime   @default(now()) @map("created_at")
+  updatedAt    DateTime   @updatedAt @map("updated_at")
+  deletedAt    DateTime?  @map("deleted_at")
+  user         User       @relation(fields: [userId], references: [id])
+  wallet       Wallet?    @relation(fields: [walletId], references: [id])
+  contributions GoalContribution[]
+
+  @@index([userId])
+  @@map("goals")
+}
+
+model GoalContribution {
+  id         String    @id @default(uuid()) @db.Uuid
+  goalId     String    @map("goal_id") @db.Uuid
+  amount     BigInt // + deposit, - withdrawal
+  occurredAt DateTime  @map("occurred_at")
+  note       String?
+  createdAt  DateTime  @default(now()) @map("created_at")
+  updatedAt  DateTime  @updatedAt @map("updated_at")
+  deletedAt  DateTime? @map("deleted_at")
+  goal       Goal      @relation(fields: [goalId], references: [id])
+
+  @@index([goalId])
+  @@map("goal_contributions")
+}
+
+model Notification {
+  id        String           @id @default(uuid()) @db.Uuid
+  userId    String           @map("user_id") @db.Uuid
+  type      NotificationType
+  payload   Json
+  readAt    DateTime?        @map("read_at")
+  dedupeKey String?          @unique @map("dedupe_key") // e.g. budget:{id}:{threshold}
+  createdAt DateTime         @default(now()) @map("created_at")
+  updatedAt DateTime         @updatedAt @map("updated_at")
+  deletedAt DateTime?        @map("deleted_at")
+  user      User             @relation(fields: [userId], references: [id])
+
+  // Declared here so Prisma knows the name; the migration makes it PARTIAL (WHERE read_at IS NULL).
+  @@index([userId, readAt])
+  @@map("notifications")
+}

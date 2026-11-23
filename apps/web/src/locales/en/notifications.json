@@ -1,0 +1,33 @@
+{
+  "title": "Notifications",
+  "bell": "Notifications",
+  "bellUnread": "Notifications, {{n}} unread",
+  "unread": "Unread",
+  "read": "Read",
+  "markAll": "Mark all as read",
+  "alertTitle": "{{pct}}% of {{name}} used",
+  "alertTitleTotal": "{{pct}}% of your total budget used",
+  "empty": "No notifications yet",
+  "emptyHint": "When spending nears a budget or a goal needs a nudge, you will see it here.",
+  "loadError": "We could not load your notifications.",
+  "retry": "Try again",
+  "loadMore": "Show more",
+  "seeAll": "See all notifications",
+  "latest": "Latest",
+  "open": "Open",
+  "viewBudget": "View budget",
+  "viewGoal": "View goal",
+  "type": {
+    "BUDGET_WARNING": "Budget getting close",
+    "BUDGET_EXCEEDED": "Over budget",
+    "GOAL": "Goal",
+    "SYSTEM": "System"
+  },
+  "ago": {
+    "now": "Just now",
+    "minutes": "{{n}} min ago",
+    "hours": "{{n}} h ago",
+    "yesterday": "Yesterday",
+    "days": "{{n}} days ago"
+  }
+}

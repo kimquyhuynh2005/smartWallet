@@ -1,0 +1,65 @@
+{
+  "title": "Reports",
+  "income": "Income",
+  "expense": "Spending",
+  "net": "Difference",
+  "month": "Month",
+  "upgrade": "Upgrade",
+  "retry": "Try again",
+  "addTransaction": "Add a transaction",
+  "kind": { "label": "Transaction type" },
+  "locked": {
+    "period": "This period is outside the Free plan history (the last 6 months). Upgrade to see older reports.",
+    "trend": "The 12-month trend is a Premium feature. The Free plan shows the last 6 months."
+  },
+  "byCategory": {
+    "title": "Spending by category",
+    "hint": "Which categories take the biggest share this period. Tap a row to see its transactions.",
+    "total": { "expense": "Total spent this period", "income": "Total income this period" },
+    "empty": { "expense": "No spending in this period yet", "income": "No income in this period yet" },
+    "emptyHint": "Add your first transaction to see where your money goes.",
+    "open": "see transactions",
+    "more": "Show {{count}} more categories",
+    "less": "Show less"
+  },
+  "notes": {
+    "title": "Most frequent items",
+    "hint": "The notes that show up most this period.",
+    "count_one": "{{count}} time",
+    "count_other": "{{count}} times",
+    "empty": "No notes in this period yet",
+    "emptyHint": "Add a note when you enter a transaction to see what repeats.",
+    "unavailable": "This is not available on this server yet."
+  },
+  "trend": {
+    "title": "Income and spending by month",
+    "hint": "Bars are income and spending, the line is the monthly difference.",
+    "range": "Number of months",
+    "m6": "6 months",
+    "m12": "12 months",
+    "table": "Show data table",
+    "empty": "No income or spending data yet",
+    "emptyHint": "Once you have transactions, the monthly trend appears here."
+  },
+  "daily": {
+    "title": "Daily spending",
+    "hint": "Each bar is the total spent on one day of the period.",
+    "empty": "No spending in this period yet",
+    "emptyHint": "Add an expense to see your day-by-day rhythm.",
+    "day": "Day",
+    "peak": "Biggest day: {{date}}, {{amount}}.",
+    "cumulative": "Spent so far",
+    "paceTitle": "Pace against your budget",
+    "pace": {
+      "line": "Planned pace",
+      "on": "You are spending right on your planned pace.",
+      "fast": "You are spending {{percent}}% faster than planned.",
+      "slow": "You are spending {{percent}}% slower than planned, so you have room."
+    }
+  },
+  "export": {
+    "label": "Export CSV",
+    "done": "CSV file downloaded",
+    "failed": "Could not export the CSV file"
+  }
+}

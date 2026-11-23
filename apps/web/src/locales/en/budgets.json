@@ -1,0 +1,197 @@
+{
+  "title": "Budgets",
+  "periodRange": "Period {{range}}",
+  "pastPeriod": "This period has ended: you can review it, and limits can still be edited.",
+  "actions": {
+    "template": "Use a template",
+    "add": "Add budget",
+    "rollover": "Carry leftovers into this period",
+    "delete": "Delete budget",
+    "edit": "Edit budget",
+    "save": "Save changes",
+    "cancel": "Cancel edit",
+    "back": "Budgets",
+    "seeAll": "See all transactions"
+  },
+  "total": {
+    "title": "Total budget",
+    "spent": "Spent",
+    "limit": "Budget",
+    "remaining": "Left",
+    "over": "Over by",
+    "safe": "You can spend today",
+    "perDay": "per day · {{days}} days left",
+    "ended": "This period has ended",
+    "none": "No total budget yet",
+    "noneHint": "Set one number for the whole period to see what you can still spend today.",
+    "set": "Set total budget"
+  },
+  "sort": {
+    "label": "Sort",
+    "risk": "Closest to limit",
+    "category": "By category"
+  },
+  "row": {
+    "spent": "Spent",
+    "limit": "Budget",
+    "left": "Left",
+    "over": "Over by",
+    "safe": "You can spend today",
+    "carried": "carried over:",
+    "carry": "Carry leftovers to next period",
+    "carryHint": "When on, money you did not spend this period is added to the next one",
+    "editLimit": "Edit limit for {{name}}",
+    "details": "{{name}}, see transactions",
+    "more": "Options for {{name}}",
+    "limitInvalid": "The limit must be more than 0."
+  },
+  "state": {
+    "calm": "On track",
+    "warning": "Getting close",
+    "over": "Over budget"
+  },
+  "list": {
+    "title": "By category",
+    "empty": "No category budgets yet",
+    "emptyHint": "Set a limit for Food, Transport and so on to get a heads-up before you hit it.",
+    "emptyAction": "Pick the 50/30/20 template"
+  },
+  "empty": {
+    "title": "No budgets this period",
+    "hint": "Start fast with a ready-made template, or set a limit for each category yourself. You can always change it.",
+    "pastTitle": "No budgets in this period",
+    "pastHint": "This period has ended and had no budgets. Pick a more recent month in the month switcher."
+  },
+  "error": {
+    "title": "Could not load budgets",
+    "hint": "The connection may be unstable. Please try again."
+  },
+  "toast": {
+    "limitSaved": "Limit updated",
+    "added": "Budget added",
+    "deleted": "Budget deleted",
+    "carrySaved": "Carry-over setting saved"
+  },
+  "add": {
+    "title": "Add a budget",
+    "desc": "Each category has one limit per period. A category limit also counts its sub-categories.",
+    "category": "Category",
+    "pick": "Choose a category",
+    "limit": "Limit for this period",
+    "submit": "Add",
+    "total": "Total budget (whole period)",
+    "allUsed": "You already have a budget for every spending category.",
+    "required": "Please choose a category.",
+    "amountRequired": "Enter an amount above 0."
+  },
+  "delete": {
+    "title": "Delete this budget?",
+    "body": "Only this period's limit is removed. Your transactions stay untouched.",
+    "confirm": "Delete",
+    "name": "Budget: {{name}}"
+  },
+  "template": {
+    "title": "Choose a budget template",
+    "desc": "Enter your monthly income and we split limits across categories. You preview before anything is applied.",
+    "steps": {
+      "setup": "Set up",
+      "preview": "Preview"
+    },
+    "kind": {
+      "50_30_20": "50/30/20",
+      "6_JARS": "6 Jars",
+      "CUSTOM": "Custom"
+    },
+    "kindHint": {
+      "50_30_20": "50% needs, 30% wants, 20% savings. A good start for beginners.",
+      "6_JARS": "55% necessities, 10% education, 10% long-term savings, 10% play, 10% financial freedom, 5% giving.",
+      "CUSTOM": "Set your own percentages per group. They must total exactly 100%."
+    },
+    "income": "Monthly income",
+    "incomeHint": "Only used to work out the split. It does not create a transaction.",
+    "incomeRequired": "Enter an income above 0.",
+    "groups": {
+      "needs": "Needs",
+      "wants": "Wants",
+      "savings": "Savings",
+      "necessities": "Necessities",
+      "education": "Education",
+      "long_term_savings": "Long-term savings",
+      "play": "Play",
+      "financial_freedom": "Financial freedom",
+      "give": "Give"
+    },
+    "custom": {
+      "groupName": "Group name",
+      "percent": "Share (%)",
+      "categories": "Categories in this group",
+      "noCategories": "A group without categories counts as savings: we set the money aside, no budget is created.",
+      "addGroup": "Add a group",
+      "removeGroup": "Remove group {{name}}",
+      "total": "Total share: {{total}}%",
+      "ok": "Adds up to 100%",
+      "short": "{{n}}% short",
+      "extra": "{{n}}% over",
+      "newName": "Group {{n}}"
+    },
+    "preview": {
+      "title": "You will get",
+      "total": "Total budget",
+      "reserved": "Set aside for savings",
+      "group": "{{name}} · {{percent}}%",
+      "approx": "Category amounts here are an even-split estimate. When applied, we split by your last 3 periods of spending, so numbers can differ slightly.",
+      "empty": "This template has no categories to budget.",
+      "planCut": "The Free plan allows {{max}} budgets (the total counts). If you go over, we keep the total and the biggest categories.",
+      "savings": "Savings",
+      "reservedHint": "No budget is created for this part"
+    },
+    "overwrite": {
+      "legend": "If a category already has a budget",
+      "keep": "Keep what I have",
+      "keepHint": "Only adds budgets for categories without one. Limits you set stay as they are. (Recommended)",
+      "replace": "Reset to the template",
+      "replaceHint": "Existing limits of the categories in this template are replaced by the new amounts."
+    },
+    "next": "Preview",
+    "back": "Edit",
+    "apply": "Apply to this period",
+    "done": {
+      "title": "Template applied",
+      "created": "Created: {{n}}",
+      "updated": "Updated: {{n}}",
+      "skipped": "Kept as is: {{n}}",
+      "cut": "Skipped by plan limit: {{n}}",
+      "close": "Done"
+    }
+  },
+  "rollover": {
+    "title": "Carry leftovers into this period",
+    "intro": "We take what you did not spend last period and add it to this period's limit, for budgets that have carry-over turned on.",
+    "rule1": "Overspending carries 0: we never subtract it from the next period.",
+    "rule2": "Money already carried is never carried twice, so running this again is safe.",
+    "rule3": "Base limits you edited by hand are kept.",
+    "run": "Carry over now",
+    "done": "Carried over",
+    "carried": "Total carried over",
+    "created": "Created: {{n}}",
+    "updated": "Updated: {{n}}",
+    "skipped": "Skipped: {{n}}",
+    "planCut": "Skipped by plan limit: {{n}}",
+    "noneCarried": "Nothing was carried. Turn on “Carry leftovers to next period” on last period's budgets first.",
+    "close": "Close"
+  },
+  "detail": {
+    "title": "Spending by category",
+    "unknown": "This category",
+    "noBudget": "This category has no budget in this period.",
+    "setBudget": "Set a budget",
+    "txns": "Transactions this period",
+    "covers": "Also covers: {{names}}",
+    "empty": "No spending in this period yet",
+    "emptyHint": "When you log spending in this category it will show up here.",
+    "more": "Show more",
+    "errorTxn": "Could not load transactions.",
+    "notFound": "We could not find this category.",
+    "backToBudgets": "Back to budgets"
+  }
+}

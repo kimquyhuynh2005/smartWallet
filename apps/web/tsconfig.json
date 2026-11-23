@@ -1,0 +1,9 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "module": "ESNext", "moduleResolution": "Bundler", "jsx": "react-jsx", "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "noEmit": true, "types": ["vite/client"],
+    "baseUrl": ".", "paths": { "@/*": ["src/*"], "@smartwallet/shared": ["../../packages/shared/src/index.ts"] }
+  },
+  "include": ["src", "vite.config.ts"]
+}

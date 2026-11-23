@@ -1,0 +1,33 @@
+{
+  "title": "Thông báo",
+  "bell": "Thông báo",
+  "bellUnread": "Thông báo, {{n}} chưa đọc",
+  "unread": "Chưa đọc",
+  "read": "Đã đọc",
+  "markAll": "Đánh dấu tất cả đã đọc",
+  "alertTitle": "Đã dùng {{pct}}% ngân sách {{name}}",
+  "alertTitleTotal": "Đã dùng {{pct}}% ngân sách tổng",
+  "empty": "Chưa có thông báo nào",
+  "emptyHint": "Khi chi tiêu gần chạm ngân sách hoặc mục tiêu cần nhắc, mình sẽ báo ở đây.",
+  "loadError": "Chưa tải được thông báo.",
+  "retry": "Thử lại",
+  "loadMore": "Xem thêm",
+  "seeAll": "Xem tất cả thông báo",
+  "latest": "Mới nhất",
+  "open": "Mở nội dung",
+  "viewBudget": "Xem ngân sách",
+  "viewGoal": "Xem mục tiêu",
+  "type": {
+    "BUDGET_WARNING": "Gần hết ngân sách",
+    "BUDGET_EXCEEDED": "Vượt ngân sách",
+    "GOAL": "Mục tiêu",
+    "SYSTEM": "Hệ thống"
+  },
+  "ago": {
+    "now": "Vừa xong",
+    "minutes": "{{n}} phút trước",
+    "hours": "{{n}} giờ trước",
+    "yesterday": "Hôm qua",
+    "days": "{{n}} ngày trước"
+  }
+}
